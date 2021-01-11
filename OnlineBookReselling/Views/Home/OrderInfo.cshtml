@@ -1,0 +1,36 @@
+﻿@model IEnumerable< OnlineBookReselling.Entities.Order>
+@{
+    ViewData["Title"] = "Details";
+}
+    <div class="card" style="width:100%; margin-top:10px;">
+        <div class="card-header bg-dark text-white">
+            <h5>Order Details</h5>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(m => m.OrderId)</th>
+                    <th>@Html.DisplayNameFor(m => m.UserId)</th>
+                    <th>@Html.DisplayNameFor(m => m.UserEmail)</th>
+                    <th>@Html.DisplayNameFor(m => m.BookId)</th>
+                    <th>@Html.DisplayNameFor(m => m.BookName)</th>
+                    <th>@Html.DisplayNameFor(m => m.Amount)</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var order in Model)
+                {
+                    <tr>
+                        <td>@order.OrderId</td>
+                        <td>@order.UserId</td>
+                        <td>@order.UserEmail</td>
+                        <td>@order.BookId</td>
+                        <td>@order.BookName</td>
+                        <td>@order.Amount</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <button class="btn btn-danger" onclick="location.href='@Url.Action("Index", "Home")';return false;">Shop Again</button>
+    </div>

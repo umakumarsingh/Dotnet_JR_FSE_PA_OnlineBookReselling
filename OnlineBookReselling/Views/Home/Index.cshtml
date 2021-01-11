@@ -1,0 +1,56 @@
+﻿@model OnlineBookReselling.BusinessLayer.Services.ViewModels.BookViewModels
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-right" style="margin-top:10px;">
+    @Html.ActionLink("Register", "RegisterUser", "Home", new { @class = "btn btn-danger" })
+</div>
+<div class="text-center" style="margin-top:10px;">
+    <h4>Online Book Reselling</h4>
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.BookName)</th>
+            <th>@Html.DisplayNameFor(m => m.Author)</th>
+            <th>@Html.DisplayNameFor(m => m.Description)</th>
+            <th>@Html.DisplayNameFor(m => m.UnitPrice)</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.PageCount() == 0)
+        {
+            <tr>
+                <td style="color:red;" colspan="12">
+                    Records not found |
+                    @Html.ActionLink("Go To Home", "Index", "Home", new { @class = "btn btn-primary" })
+                </td>
+            </tr>
+        }
+        else
+        {
+            @foreach (var book in Model.PaginatedBookType())
+            {
+    <tr>
+            <td>@book.BookName</td>
+            <td>@book.Author</td>
+            <td>@book.Description</td>
+            <td>@book.UnitPrice.ToString(System.Globalization.CultureInfo.CreateSpecificCulture("hi-IN"))</td>
+            <td>
+                @Html.ActionLink("Details", "Details", "Home", new { BookId = book.BookId, @class = "btn btn-primary" })
+            </td>
+    </tr>
+            }
+        }
+    </tbody>
+</table>
+<ul class="pagination">
+    @for (int i = 1; i <= Model.PageCount(); i++)
+    {
+        <li class="@(i == Model.CurrentPage ? "page-item active" : "page-item")">
+            <a class="page-link" href="@Url.Action("Index", new { page = i })">@i</a>
+        </li>
+    }
+</ul>

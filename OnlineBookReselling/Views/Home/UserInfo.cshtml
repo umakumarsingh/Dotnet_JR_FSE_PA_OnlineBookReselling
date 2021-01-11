@@ -1,0 +1,36 @@
+﻿@model OnlineBookReselling.Entities.ApplicationUser
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="card" style="width:100%; margin-top:10px;">
+    <div class="card-header bg-dark text-white">
+        <h5>User Details</h5>
+    </div>
+    <div class="card-body">
+        <table class="table table-borderless">
+            <tr>
+                <td>
+                    <b>@Html.DisplayNameFor(m => m.Name)</b>
+                </td>
+                <td>@Html.DisplayFor(m => m.Name)</td>
+                <td>
+                    <b>@Html.DisplayNameFor(m => m.Email)</b>
+                </td>
+                <td>@Html.DisplayFor(m => m.Email)</td>
+            </tr>
+            <tr>
+                <td>
+                    <b>@Html.DisplayNameFor(m => m.Password)</b>
+                </td>
+                <td>@Html.DisplayFor(m => m.Password)</td>
+                <td>
+                    <b>@Html.DisplayNameFor(m => m.MobileNumber)</b>
+                </td>
+                <td>@Html.DisplayFor(m => m.MobileNumber)</td>
+            </tr>
+        </table>
+        <p>
+            @Html.ActionLink("Shop Now", "Index", "Home", new { @class = "btn btn-primary" })
+        </p>
+    </div>
+</div>

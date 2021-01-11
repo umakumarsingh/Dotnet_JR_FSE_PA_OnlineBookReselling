@@ -1,0 +1,37 @@
+﻿@model OnlineBookReselling.Entities.Book
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="card" style="width:100%; margin-top:10px;">
+    <div class="card-header bg-dark text-white">
+        <h5>Book Details</h5>
+    </div>
+    <div class="card-body">
+        <table class="table table-borderless">
+            <tr>
+                <td>
+                    <b>@Html.DisplayNameFor(m => m.BookName)</b>
+                </td>
+                <td>@Html.DisplayFor(m => m.BookName)</td>
+                <td>
+                    <b>@Html.DisplayNameFor(m => m.Author)</b>
+                </td>
+                <td>@Html.DisplayFor(m => m.Author)</td>
+            </tr>
+            <tr>
+                <td>
+                    <b>@Html.DisplayNameFor(m => m.Description)</b>
+                </td>
+                <td>@Html.DisplayFor(m => m.Description)</td>
+                <td>
+                    <b>@Html.DisplayNameFor(m => m.UnitPrice)</b>
+                </td>
+                <td>@Html.DisplayFor(m => m.UnitPrice)</td>
+            </tr>
+        </table>
+        <p>
+            @Html.ActionLink("Back to List", "Index", "Home", new { @class = "btn btn-primary" }) ||
+            @Html.ActionLink("Place Order", "PlaceBookOrder", "Home", new { bookId = Model.BookId, @class = "btn btn-primary" })
+        </p>
+    </div>
+</div>

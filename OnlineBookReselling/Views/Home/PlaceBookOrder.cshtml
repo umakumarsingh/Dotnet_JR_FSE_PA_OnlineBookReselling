@@ -1,0 +1,41 @@
+﻿@model OnlineBookReselling.BusinessLayer.Services.ViewModels.ApplicationUserViewModels
+@{
+    ViewData["Title"] = "Place Book Order";
+    
+}
+
+<div class="card" style="width:100%; margin:10px;">
+    <div class="card-header bg-success text-white">
+        <h5>Place Book Order, Make Sure you are allready register with Us!</h5>
+    </div>
+    <div class="card-body">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Email)
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Password)
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary">Place Order</button>
+                <button class="btn btn-danger" onclick="location.href='@Url.Action("Index", "Home")';return false;">Back To Home</button>
+            </div>
+            <div class="text-right" style="margin-top:10px;">
+                @Html.ActionLink("Register", "RegisterUser", "Home", new { @class = "btn btn-danger" })
+            </div>
+        }
+    </div>
+</div>

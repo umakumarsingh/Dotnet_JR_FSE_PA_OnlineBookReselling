@@ -1,0 +1,5 @@
+D:\IIHT\Task-14\InMemory\OnlineBookReselling.DataLayer\bin\Debug\netcoreapp3.1\OnlineBookReselling.DataLayer.deps.json
+D:\IIHT\Task-14\InMemory\OnlineBookReselling.DataLayer\bin\Debug\netcoreapp3.1\OnlineBookReselling.DataLayer.dll
+D:\IIHT\Task-14\InMemory\OnlineBookReselling.DataLayer\obj\Debug\netcoreapp3.1\OnlineBookReselling.DataLayer.csprojAssemblyReference.cache
+D:\IIHT\Task-14\InMemory\OnlineBookReselling.DataLayer\obj\Debug\netcoreapp3.1\OnlineBookReselling.DataLayer.AssemblyInfoInputs.cache
+D:\IIHT\Task-14\InMemory\OnlineBookReselling.DataLayer\obj\Debug\netcoreapp3.1\OnlineBookReselling.DataLayer.AssemblyInfo.cs
